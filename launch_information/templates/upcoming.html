@@ -1,0 +1,83 @@
+{% extends 'base.html'%}
+
+{% block head%}
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+{% endblock %}
+
+{% block content%}
+
+{% load static %}
+
+<section id="showcase" >
+    <div class="container" style="background-image:url {% static 'milky-way.jpg' %}" >
+      <h1>Latest Updates</h1>
+
+
+
+  </div>
+
+<main class="container0" >
+
+  {% for p in data %}
+
+    {% if forloop.counter == 1 %}
+
+    <section class="card">
+      <img src="{{p.img}}" alt="" />
+
+      <div align="left">
+        <h3>{{p.name}}</h3>
+        Date : {{p.date}}<br>
+        Time : {{p.time}}<br>
+        Country : {{p.country}}<br>
+        Site : {{p.site}}
+        <p><b>Description</b> :<br> {{p.des}}</p>
+
+
+      </div>
+    </section>
+
+
+  {% elif forloop.counter == 'even' %}
+    <section class="card" data-aos="fade-left">
+      <img src="{{p.img}}" alt="" />
+
+      <div align="left">
+        <h3>{{p.name}}</h3>
+        Date : {{p.date}}<br>
+        Time : {{p.time}}<br>
+        Country : {{p.country}}<br>
+        Site : {{p.site}}
+        <p><b>Description</b> :<br> {{p.des}}</p>
+
+      </div>
+    </section>
+
+
+  {% else %}
+    <section class="card" data-aos="fade-right">
+      <img src="{{p.img}}" alt="" />
+
+      <div align="left">
+        <h3>{{p.name}}</h3>
+        Date : {{p.date}}<br>
+        Time : {{p.time}}<br>
+        Country : {{p.country}}<br>
+        Site : {{p.site}}
+        <p><b>Description</b> :<br> {{p.des}}</p>
+
+      </div>
+    </section>
+  {% endif %}
+{% endfor %}
+
+
+  </main>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+{% endblock %}

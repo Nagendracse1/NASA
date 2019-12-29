@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<style>
+        th,td{
+
+        }
+        td{
+         background-color: white;
+         opacity:.8;
+        }
+        tr:nth-child(even) {
+            background-color: white;
+
+        }
+        th{
+         background-color:#110869;
+         opacity:.8;
+         color:yellow;
+         font-size: 18px;
+
+        }
+        table{
+        border-collapse: collapse;
+        margin:auto;
+        margin-top:0px;
+        width: 75%;
+        border:1px solid #dacbcb;
+
+
+        }
+
+
+    </style>
+
+{% endblock %}
+
+{% block content%}
+
+
+<section id="showcase" >
+    <div class="container" >
+      <h1>Past Rocket Launches</h1>
+
+
+
+  </div>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Vehicle</th>
+            <th>Agency</th>
+            <th>Location</th>
+        </tr>
+        {% for d in past %}
+        <tr>
+            <td>{{d.name}}</td>
+            <td>{{d.date}}</td>
+            <td>{{d.time}}</td>
+            <td>{{d.vehicle}}</td>
+            <td>{{d.agency}}</td>
+            <td>{{d.location}}</td>
+
+        </tr>
+        {% endfor %}
+    </table><br>
+</section>
+{% endblock %}

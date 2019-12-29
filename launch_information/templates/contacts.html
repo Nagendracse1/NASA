@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block head%}
+{% load static %}
+<style>
+    .containerc{
+    	width: 900px;
+    	background-color: white;
+    	margin:auto;
+    	
+    }
+    .row{
+    	margin-left: 400px;
+    }
+   
+
+    </style>
+
+{% endblock %}
+
+
+{% block content%}
+
+<div class="containerc">
+
+
+	  <div class="columnc">
+          <h1>Contact</h1>
+		<p>Here we provide you with lots of information regarding rocket launching
+            and various other topics regarding space exploration. If you have any problems..</p><br>
+		<h1>You can send us your feedback</h1>
+		<form action="/action_page.php">
+		  <label for="fname">First Name</label>
+		  <input type="text" id="fname" name="firstname" placeholder="Your name..">
+		  <label for="lname">Last Name</label>
+		  <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+		  <label for="email">Email</label>
+		  <input type="email" id="email" name="email" placeholder="Your email..">
+		  <label for="country">Country</label>
+		  <select id="country" name="country">
+			<option value="india">India</option>
+			<option value="australia">Australia</option>
+			<option value="canada">Canada</option>
+			<option value="usa">USA</option>
+			<option value="france">France</option>
+			<option value="germany">Germany</option>
+			<option value="uk">Uk</option>
+			<option value="other">other</option>
+		  </select>
+		  <label for="subject">Subject</label>
+		  <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+		  <input type="submit" value="Submit">
+		</form>
+	  </div>
+	  <div class="row">
+		<div class="columnc" >
+		  <img src="{% static 'images/photo.jpg' %}" style="width:100%"  >
+		  <div style="text-align:center">
+			<h4>INQUIRIES PLEASE CALL:</h4>
+			<h2>9870931114</h2>
+			<h4>OR JUST EMAIL US INSTEAD AT:</h4>
+			<h2>alienbrain0@gmail.com</h2>
+			
+	</div>
+		</div>
+	</div>
+  </div>
+  <br>
+{% endblock %}

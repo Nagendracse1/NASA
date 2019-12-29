@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Info-Rocket</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  {% block head %}
+  {% endblock %}
+
+</head>
+
+<body>
+  <header>
+    <div class='container'>
+      <h1><a href="{% url 'upcoming' %}"><abbr title="about"><img src="{% static 'images/logo.png' %}"  alt="logo" height=60px></abbr></a>
+      Info-Rocket</h1>
+    </div>
+  </header>
+  
+  <nav id="navbar">
+    <div class="container">
+      <ul>
+        <li><b><a href="{% url 'upcoming' %}">HOME</a></b></li>
+
+        <li><b><a href="{% url 'launch_sites' %}">Launch sites</a></b></li>
+        <li><b><a href="{% url 'past_launch' %}">Past launches</a></b></li>
+        <li><b><a href="{% url 'facts' %}">Facts</a></b></li>
+        <li><b><a href="{% url 'learn' %}">Learn</a></b></li>
+        <li><b><a href="{% url 'contacts' %}">Contact</a></b></li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+     {% block content %}
+
+      {% endblock %}
+  </section>
+  <footer id="main-footer">
+    <marquee>
+      <p>Copyright &copy; 2019 By SATRIX</p>
+    </marquee>
+      <ul>
+        <li><a href="facebook.com"><img src="{% static 'images/facebook1.png' %}" height=35px></a></li>
+        <li><a href="instagram.com"><img src="{% static 'images/instagram.png' %}" height=40px></a></li>
+        <li><a href=""><img src="{% static 'images/twitter.png' %}" height=40px></a></li>
+        <li><a><img src="{% static 'images/google.png' %}" height=35px></a></li>
+      </ul>
+  </footer>
+
+</body>
+</html>

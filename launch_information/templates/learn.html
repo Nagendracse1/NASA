@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+
+{% block head%}
+{% load static %}
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/swiper.min.css' %}">
+
+
+
+	<style>
+		body
+{
+  background: #262626;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color:#000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper-container
+{
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 50px;
+}
+.swiper-slide
+{
+  background-position: center;
+  background-size: cover;
+  width: 400px;
+  height: 500px;
+  background: #fff;
+}
+
+.swiper-slide .imgBx
+{
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+
+}
+ .swiper-slide .imgBx img
+ {
+  width:100%;
+ }
+
+.swiper-slide .details
+{
+  box-sizing: border-box;
+  font-size: 20px;
+  padding: 20px;
+}
+
+.swiper-slide .details h3
+{
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  text-align: center;
+  line-height: 20px;
+}
+
+.swiper-slide .details h3 span
+{
+  font-size: 16px;
+  color:#f44336;
+}
+	</style>
+
+{% endblock %}
+
+
+{% block content%}
+<br>
+<h1 style="color:white;" align="center">Learn</h1>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        {% for l in learn %}
+    	<div class="swiper-slide">
+    		<a href="{{l.url}}" target="_blank">
+    		<div class="imgBx">
+    			<img src="{{l.img_url}}">
+    		</div>
+                <h4>{{l.title}}</h4>
+    		<div class="details">
+
+    			<h3>Title<br><span>{{l.des}}</span></h3>
+    		</a>
+    		</div>
+ 		</div>
+    {% endfor %}
+
+    </div>
+
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
+
+
+  <script type="text/javascript" src="{% static 'js/swiper.min.js' %}"></script>
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      coverflowEffect: {
+        rotate: 60,
+        stretch: 0,
+        depth: 500,
+        modifier: 1,
+        slideShadows : true,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    });
+  </script>
+
+{% endblock %}

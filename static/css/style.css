@@ -1,0 +1,259 @@
+body{
+  background-color: black;
+  color:#555;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:16px;
+  line-height:1.6em;
+  margin:0;
+  background: url("/static/images/milky-way.jpg")
+}
+
+header{
+  background-color: #4ac7ff;
+  color: #fff;
+  padding: 0;
+  font-size: 20px;
+  height: 95%;
+  margin: 0;
+}
+
+header h1{
+  float: left;
+}
+
+header h2{
+  float:right;
+  margin-top:50px;
+  font-size: 40px;
+}
+
+header h2:hover{
+  color: red;
+}
+
+header img:hover{
+  opacity: 0.6;
+  }
+a:link {
+  color: white;
+}
+
+a:visited {
+  color: white;
+}
+
+.container{
+  margin: auto;
+  overflow:hidden;
+  width: 100%;
+  background: url("/static/images/milky-way.jpg")
+}
+
+#navbar{
+  background-color:#19598e;
+  color:#DDDDEC;
+}
+
+#navbar ul{
+  padding:0;
+  list-style: none;
+}
+
+#navbar li{
+  display:inline;
+  padding-right: 20px;
+  padding-left: 20pX;
+
+}
+
+#navbar li:hover{
+  background-color: rgb(148,55,103);
+  border: 1px solid white;
+  padding: 20px;
+  color: white;
+  text-align:center;
+  
+}
+#navbar a{
+  color:white;
+  text-decoration: none;
+  font-size:18px;
+  padding-right:15px;
+}
+#showcase{
+  background-image:url('image/showcase.jpg');
+  background-size:100%;
+  min-height:1000px;
+  margin-bottom:30px;
+  text-align: center;
+}
+
+#showcase h1{
+  color:  #bfba9f;
+  font-size:50px;
+  line-height: 1.6em;
+  padding-top:30px;
+}
+
+#main-footer{
+  background: #202325;
+  color:#fff;
+  text-align: center;
+  padding:20px;
+
+}
+#main-footer img:hover{
+  opacity: 0.6;
+  }
+
+#main-footer li{
+  padding-left: 20px;
+  padding-right: 20px;
+  display: inline;
+
+}
+
+#sidebar{
+  float:right;
+  width:30%;
+  background: #333;
+  color:#fff;
+  padding:10px;
+  box-sizing: border-box;
+}
+
+media(max-width:600px){
+  #main{
+    width:100%;
+    float:none;
+  }
+
+  #sidebar{
+    width:100%;
+    float:none;
+  }
+}
+button{
+  text-decoration: none;
+}
+
+
+/*--------------upcoming.html-----------*/
+.container0 {
+  max-width: 1100px;
+  margin: auto;
+  overflow: auto;
+  padding: 0 2rem;
+  background-image: url("milky-way.jpg");
+
+}
+
+
+
+
+.card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+  background: #f1f1f1;
+  margin-bottom: 2rem;
+}
+
+.card h3 {
+  margin-bottom: 2rem;
+}
+
+.card img {
+  height: 400px;
+}
+
+.card > div {
+  padding: 2rem;
+}
+
+.card:nth-child(even) img {
+  order: 2;
+}
+
+
+.btn {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  padding: 0.8rem 1.8rem;
+  margin-top: 2rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+/*--------------Contact.html-----------*/
+
+
+  /* Style inputs */
+  input[type=text], select, textarea {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	margin-top: 6px;
+	margin-bottom: 16px;
+	resize: vertical;
+  }
+
+  input[type=email], select, textarea {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	margin-top: 6px;
+	margin-bottom: 16px;
+	resize: vertical;
+  }
+
+  input[type=submit] {
+	background-color: #4CAF50;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	cursor: pointer;
+  }
+
+  input[type=submit]:hover {
+	background-color: #45a049;
+  }
+
+  /* Style the container/contact section */
+  .containerc {
+	border-radius: 5px;
+	background-color: #f2f2f2;
+	padding: 10px;
+	align-content: center;
+	width: 75%;
+
+  }
+
+  /* Create two columns that float next to eachother */
+  .columnc {
+	float: left;
+	width: 55%;
+	margin-top: 6px;
+	padding: 20px;
+	background-color: #f2f2f2;
+
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+	content: "";
+	display: table;
+	clear: both;
+  }
+
+  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+	.column, input[type=submit] {
+	  width: 100%;
+	  margin-top: 0;
+	}
+  }

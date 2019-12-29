@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/styleff.css' %}">
+ <style>
+ *{
+    margin: 0px;
+    padding: 0px;
+   }
+   body{
+    font-family: arial;
+   }
+   .mainff{
+
+    margin: 2%;
+   }
+
+   .cardff{
+        width: 20%;
+        display: inline-block;
+        box-shadow: 2px 2px 20px black;
+        border-radius: 5px;
+        margin: 2%;
+        word-wrap: break-word;
+       }
+
+   .imageff img{
+     width: 100%;
+     border-top-right-radius: 5px;
+     border-top-left-radius: 5px;
+
+
+
+    }
+    .cardff{
+    width: 20%;
+    display: inline-block;
+    box-shadow: 2px 2px 20px black;
+    border-radius: 5px;
+    margin: 2%;
+    word-wrap: break-word;
+    background-color: rgb(14, 2, 26);
+   }
+.cardff:hover{
+    background-color: rgb(14, 2, 26);
+    color: aliceblue;
+}
+
+.imageff :hover{
+    opacity: 0.5;
+}
+.imageff img{
+ width: 100%;
+ border-top-right-radius: 5px;
+ border-top-left-radius: 5px;
+
+
+
+}
+
+   .titleff{
+
+     text-align: center;
+     padding: 10px;
+
+    }
+
+   .cardff h1{
+     font-size: 20px;
+    }
+
+   .des{
+     padding: 3px;
+     text-align: center;
+
+     padding-top: 10px;
+           border-bottom-right-radius: 5px;
+     border-bottom-left-radius: 5px;
+   }
+
+
+ </style>
+{% endblock %}
+
+
+{% block content %}
+<br>
+<br>
+<h1>Facts</h1>
+<div class="mainff">
+
+ <!--cards -->
+{% for f in facts reversed %}
+<div class="cardff">
+
+<div class="imageff">
+   <img src="{{f.img}}">
+</div>
+<div class="titleff">
+ <h1 >{{f.title}}</h1>
+</div>
+<div class="des" style="backgrounnd-color:white;">
+ <p style=" overflow: auto;height:100px;">{{f.text}}</p>
+</div>
+</div>
+    {% endfor %}
+
+</div>
+
+
+
+
+{% endblock %}

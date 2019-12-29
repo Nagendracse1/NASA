@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<style>
+        th,td{
+
+        }
+        td{
+         background-color: white;
+         opacity:.8;
+        }
+        tr:nth-child(even) {
+            background-color: white;
+
+        }
+        th{
+         background-color:#110869;
+         opacity:.8;
+         color:yellow;
+         font-size: 18px;
+
+        }
+        table{
+        border-collapse: collapse;
+        margin:auto;
+        margin-top:0px;
+        width: 75%;
+        border:1px solid #dacbcb;
+
+
+        }
+
+
+    </style>
+
+{% endblock %}
+
+{% block content%}
+
+
+<section id="showcase" >
+    <div class="container" >
+      <h1>Launch Sites Information</h1>
+
+
+
+  </div>
+    <table>
+        <tr>
+            <th>Country</th>
+            <th>Location</th>
+            <th>Coordinates</th>
+            <th>No of rockets launched</th>
+            <th>Heavies rocket launched</th>
+            <th>Highest altitude achieved</th>
+            <th>Operational date</th>
+        </tr>
+        {% for d in data %}
+        <tr>
+            <td>{{d.country}}</td>
+            <td>{{d.location}}</td>
+            <td>{{d.coordinates}}</td>
+            <td>{{d.no_of_rockets_launched}}</td>
+            <td>{{d.heavies_rocket_launched}}</td>
+            <td>{{d.highest_altitude_achieved}}</td>
+            <td>{{d.operational_date}}</td>
+        </tr>
+        {% endfor %}
+    </table><br>
+</section>
+
+{% endblock %}
